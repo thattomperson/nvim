@@ -1,0 +1,14 @@
+name: Build
+on: push
+jobs:
+  test:
+    runs-on: buildjet-4vcpu-ubuntu-2204
+    name: Test
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./.github/actions/build
+      # - uses: actions/upload-artifact@v3
+      #   with:
+      #     name: neovim
+      #     path: path/to/artifact/world.txt
+    

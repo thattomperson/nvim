@@ -1,0 +1,18 @@
+name: "Build and release Neovim image"
+
+inputs:
+
+  target:
+    description: "The target version of Neovim stable or nightly"
+    required: false
+    default: "stable"
+
+
+runs:
+  using: "composite"
+  steps: 
+    - run: |
+        export TARGET=${{ inputs.target }}
+
+        ./.github/actions/release/run.sh
+      shell: bash
