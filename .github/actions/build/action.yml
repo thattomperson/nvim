@@ -14,5 +14,5 @@ runs:
     - run: |
         export TARGET=${{ inputs.target }}
 
-        ./.github/actions/release/run.sh
+        ./.github/actions/build/run.sh
       shell: bash
