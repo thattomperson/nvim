@@ -7,8 +7,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: ./.github/actions/build
-      # - uses: actions/upload-artifact@v3
-      #   with:
-      #     name: neovim
-      #     path: path/to/artifact/world.txt
+      - uses: actions/upload-artifact@v3
+        with:
+          name: neovim
+          path: neovim/build
     
