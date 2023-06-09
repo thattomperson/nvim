@@ -7,8 +7,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: ./.github/actions/build
-      - uses: actions/upload-artifact@v3
         with:
-          name: neovim
-          path: neovim/build/bin
-    
+          target: stable
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "stable"
+          prerelease: true
+          title: "Development Build"
+          files: neovim/build/bin
