@@ -2,7 +2,7 @@ name: Build
 on: push
 jobs:
   test:
-    runs-on: buildjet-4vcpu-ubuntu-2204
+    runs-on: buildjet-4vcpu-ubuntu-2204-arm
     name: Test
     steps:
       - uses: actions/checkout@v3
