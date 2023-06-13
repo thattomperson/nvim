@@ -9,9 +9,7 @@ jobs:
       - uses: ./.github/actions/build
         with:
           target: stable
-      - uses: "marvinpinto/action-automatic-releases@latest"
+      - uses: actions/upload-artifact@v3
         with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          prerelease: true
-          title: "Development Build"
-          files: neovim/build/bin
+          name: neovim
+          path: neovim/build/bin
