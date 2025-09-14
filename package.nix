@@ -10,6 +10,7 @@
     fd
     curl
     zig
+    cursor-cli
   ];
   runtimeEnv = {
     NVIM_APPNAME = "thattomperson-nvim";
