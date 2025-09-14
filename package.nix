@@ -18,6 +18,8 @@
     NVIM_APPNAME = "thattomperson-nvim";
   };
   text = ''
-    exec ${pkgs.lib.getExe pkgs.neovim} -u ${./nvim}/init.lua --cmd "set runtimepath+=${./nvim}"
+    rm -r "''$HOME/.config/''$NVIM_APPNAME";
+    ln -s ${./nvim} "''$HOME/.config/''$NVIM_APPNAME";
+    exec ${pkgs.lib.getExe pkgs.neovim};
   '';
 }
