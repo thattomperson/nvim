@@ -11,6 +11,8 @@
     curl
     zig
     cursor-cli
+    php83
+    nodejs
   ];
   runtimeEnv = {
     NVIM_APPNAME = "thattomperson-nvim";
