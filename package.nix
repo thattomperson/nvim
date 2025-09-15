@@ -13,6 +13,7 @@
     cursor-cli
     php83
     nodejs
+    git-town
   ];
   runtimeEnv = {
     NVIM_APPNAME = "thattomperson-nvim";
