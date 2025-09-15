@@ -20,6 +20,6 @@
   text = ''
     rm -r "''$HOME/.config/''$NVIM_APPNAME";
     ln -s ${./nvim} "''$HOME/.config/''$NVIM_APPNAME";
-    exec ${pkgs.lib.getExe pkgs.neovim};
+    exec ${pkgs.lib.getExe pkgs.neovim} "$@";
   '';
 }
