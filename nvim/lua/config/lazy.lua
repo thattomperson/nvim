@@ -19,7 +19,7 @@ require("lazy").setup({
 		-- add LazyVim and import its plugins
 		{ "LazyVim/LazyVim", import = "lazyvim.plugins" },
 		{ import = "lazyvim.plugins.extras.ui.edgy" },
-		{ import = "lazyvim.plugins.extras.lang.php" },
+		{ import = "plugins.extras.lang.php" }, -- now done with plugins.lang-php
 		{ import = "lazyvim.plugins.extras.lang.yaml" },
 		{ import = "lazyvim.plugins.extras.lang.typescript" },
 		{ import = "lazyvim.plugins.extras.lang.json" },
