@@ -5,3 +5,7 @@
 if vim.g.neovide then
 	vim.g.clipboard = ""
 end
+
+local opt = vim.opt
+
+opt.mouse = "" -- Disable the mouse
