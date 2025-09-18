@@ -15,6 +15,7 @@
     nodejs
     git-town
     tree-sitter
+    clang_16
   ];
   runtimeEnv = {
     NVIM_APPNAME = "thattomperson-nvim";
