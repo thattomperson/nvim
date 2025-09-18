@@ -14,6 +14,7 @@
     php83
     nodejs
     git-town
+    tree-sitter
   ];
   runtimeEnv = {
     NVIM_APPNAME = "thattomperson-nvim";
