@@ -18,11 +18,21 @@ require("lazy").setup({
 	spec = {
 		-- add LazyVim and import its plugins
 		{ "LazyVim/LazyVim", import = "lazyvim.plugins" },
+		
 		{ import = "lazyvim.plugins.extras.ui.edgy" },
+
+		-- Lang Extras
 		{ import = "plugins.extras.lang.php" }, -- now done with plugins.lang-php
 		{ import = "lazyvim.plugins.extras.lang.yaml" },
 		{ import = "lazyvim.plugins.extras.lang.typescript" },
 		{ import = "lazyvim.plugins.extras.lang.json" },
+
+		-- AI Extras
+		os.getenv("NVIM_WITH_CLAUDECODE") == "1" and { import = "lazyvim.plugins.extras.ai.caludecode" } or {},
+
+		-- Testing Extras
+		{ import "lazyvim.plugins.extras.testing.core" },
+
 		-- import/override with your plugins
 		{ import = "plugins" },
 	},
