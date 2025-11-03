@@ -28,10 +28,10 @@ require("lazy").setup({
 		{ import = "lazyvim.plugins.extras.lang.json" },
 
 		-- AI Extras
-		os.getenv("NVIM_WITH_CLAUDECODE") == "1" and { import = "lazyvim.plugins.extras.ai.caludecode" } or {},
+		os.getenv("NVIM_WITH_CLAUDECODE") == "1" and { import = "lazyvim.plugins.extras.ai.caludecode" } or { },
 
 		-- Testing Extras
-		{ import "lazyvim.plugins.extras.testing.core" },
+		{ import "lazyvim.plugins.extras.test.core" },
 
 		-- import/override with your plugins
 		{ import = "plugins" },
