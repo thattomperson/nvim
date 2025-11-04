@@ -5,9 +5,8 @@ return {
     opts = {
       adapters = {
         ["neotest-phpunit"] = {
-          phpunit_cmd = function()
-            return "phpunit";
-          end
+          phpunit_cmd = "phpunit",
+          filter_dirs = { "vendor", "plugins", "lib/vendor" },
         },
       }
     },
