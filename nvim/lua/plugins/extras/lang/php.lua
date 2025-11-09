@@ -1,5 +1,30 @@
 local lsp = vim.g.lazyvim_php_lsp or "phpactor"
 
+
+
+--- Searches for a file upwards from the current directory.
+-- It uses the Neovim function `findfile` with a path of `.;`.
+-- `.` checks the current directory.
+-- `;` tells Neovim to search upwards through parent directories until the root.
+-- This is a very efficient and idiomatic way to find project-level files.
+---@param potential_names string[]
+---@param global_fallback_path string
+function find_config_file(potential_names, global_fallback_path)
+    -- Iterate through the list of potential filenames
+    for _, filename in ipairs(potential_names) do
+        -- Use vim.fn.findfile with path '.;'
+        local found_path = vim.fn.findfile(filename, '.;')
+
+        -- If findfile succeeds, it returns the absolute path as a string.
+        -- If it fails, it returns an empty string ('').
+        if found_path ~= '' then
+            return found_path
+        end
+    end
+
+    return global_fallback_path
+end
+
 return {
 	recommended = {
 		ft = "php",
@@ -83,7 +108,7 @@ return {
 				php_cs_fixer = {
 					append_args = {
 						"--config",
-						".php-cs-fixer.php;.php-cs-fixer.dist.php;.php_cs;.php_cs.dist;$PHPCSFIXER_CONFIG"
+						find_config_file({".php-cs-fixer.php", ".php-cs-fixer.dist.php", ".php_cs", ".php_cs.dist"}, "$PHPCSFIXER_CONFIG")
 					},
 				},
 			},
