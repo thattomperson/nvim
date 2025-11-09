@@ -22,7 +22,7 @@ function find_config_file(potential_names, global_fallback_path)
         end
     end
 
-    return global_fallback_path
+    return vim.fn.expand(global_fallback_path)
 end
 
 return {
