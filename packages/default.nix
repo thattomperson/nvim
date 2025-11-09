@@ -19,12 +19,12 @@
   ];
   runtimeEnv = {
     NVIM_APPNAME = "thattomperson-nvim";
+    PHPCSFIXER_CONFIG = ../.php-cs-fixer.php;
   };
   text = ''
     export NVIM_CONFIG_PATH="$HOME/.config/$NVIM_APPNAME";
     export LG_CONFIG_FILE="$NVIM_CONFIG_PATH/lazygit.yml";
     mkdir -p "$NVIM_CONFIG_PATH";
-
 
     # Delete all existing symlinks
     find "$NVIM_CONFIG_PATH" -maxdepth 1 -type l -delete

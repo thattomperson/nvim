@@ -79,6 +79,7 @@ return {
 			formatters_by_ft = {
 				php = { "php_cs_fixer" },
 			},
+			formatters.php_cs_fixer.append_args = { "--config", ".php-cs-fixer.php;.php-cs-fixer.dist.php;.php_cs;.php_cs.dist;$PHPCSFIXER_CONFIG" },
 		},
 	},
 }
