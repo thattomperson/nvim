@@ -16,6 +16,7 @@
     tree-sitter
     gcc
     claude-code
+    statix
   ];
   runtimeEnv = {
     NVIM_APPNAME = "thattomperson-nvim";
